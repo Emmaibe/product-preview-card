@@ -74,9 +74,57 @@ svg {
   display: block;
 }
 
-.heading {
-  font-size: var(--fs-400);
-  font-family: var(--ff-primary);
+main {
+  background-color: var(--clr-background);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.main-sec {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.container {
+  max-width: 20.8rem;
+  height: 63vh;
+}
+
+.even-columns {
+  display: grid;
+  grid-auto-rows: 37% 1fr;
+  margin: auto;
+}
+
+.img {
+  background: url(images/image-product-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  border-radius: 10px 10px 0 0;
+}
+
+.article {
+  background-color: var(--clr-neutral-100);
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0 0 10px 10px;
+}
+
+.title {
+  letter-spacing: 0.3rem;
+}
+
+.body {
+  font-size: var(--fs-100);
+  font-family: var(--ff-secondary);
+  color: var(--clr-body);
 }
 
 .main {
@@ -84,33 +132,9 @@ svg {
   line-height: 2.5rem;
 }
 
-.container {
-  max-width: 20.8rem;
-  height: 85vh;
-}
-
-.even-columns {
-  display: grid;
-  grid-auto-rows: 1fr 1fr;
-  margin: auto;
-}
-
-.img {
-  background: url(images/image-product-mobile.jpg);
-  background-repeat: no-repeat;
-}
-
-.article {
-  background-color: var(--clr-neutral-100);
-  padding: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.body {
-  font-size: var(--fs-100);
-  font-family: var(--ff-secondary);
-  color: var(--clr-body);
+.heading {
+  font-size: var(--fs-400);
+  font-family: var(--ff-primary);
 }
 
 .pricing {
@@ -146,6 +170,12 @@ svg {
   padding: 1rem;
   align-items: center;
   gap: 0.7rem;
+  transition: box-shadow 0.3s, color 0.3s, background-color 0.3s;
+}
+
+.button:hover {
+  box-shadow: 0 0.5rem 1rem hsl(158, 44%, 39%);
+  background-color: var(--clr-neutral-300);
 }
 
 @media (min-width: 50em) {
@@ -157,19 +187,26 @@ svg {
   .img {
     background: url(images/image-product-desktop.jpg);
     background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 50vh;
+    border-radius: 10px 0 0 10px;
   }
 
   .container {
     max-width: 43.75rem;
-    height: 50vh;
+    height: 50%;
   }
 
   .article {
     padding: 2.8rem;
+    border-radius: 0 10px 10px 0;
+    height: 50vh;
   }
-}
 
-main {
-  background-color: var(--clr-background);
-  height: 100vh;
+  .main-sec {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    margin: auto;
+  }
 }
